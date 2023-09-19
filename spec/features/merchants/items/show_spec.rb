@@ -55,8 +55,6 @@ RSpec.describe "Merchant items show page", type: :feature do
       expect(page).to have_content(100)
 
       expect(page).to have_content('Item information was successfully updated.')
-  
-  
-      
+    
     end
 end
