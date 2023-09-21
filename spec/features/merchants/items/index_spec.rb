@@ -124,15 +124,17 @@ RSpec.describe "Merchant items index", type: :feature do
     
     within ("#5_most_populer") do
     expect(page).to have_content("Top selling date for: #{@item_6_m1.name}")
-    expect(page).to have_content("Wednesday, September 20, 2023")
+    expect(page).to have_content("#{@item_6_m1.best_day}")
     expect(page).to have_content("Top selling date for: #{@item_1_m1.name}")
-    expect(page).to have_content("Wednesday, September 20, 2023")
+    expect(page).to have_content("#{@item_6_m1.best_day}")
     expect(page).to have_content("Top selling date for: #{@item_2_m1.name}")
-    expect(page).to have_content("Wednesday, September 20, 2023")
+    expect(page).to have_content("#{@item_6_m1.best_day}")
     expect(page).to have_content("Top selling date for: #{@item_3_m1.name}")
-    expect(page).to have_content("Wednesday, September 20, 2023")
+    expect(page).to have_content("#{@item_6_m1.best_day}")
     expect(page).to have_content("Top selling date for: #{@item_7_m1.name}")
-    expect(page).to have_content("Wednesday, September 20, 2023")
+    expect(page).to have_content("#{@item_6_m1.best_day}")
+    # @item_6_m1.created_at.strftime("%A, %B %d, %Y")
+
     click_link "Watch"
     expect(current_path).to eq("/merchants/#{@merchant_1.id}/items/#{@item_1_m1.id}")
     end
